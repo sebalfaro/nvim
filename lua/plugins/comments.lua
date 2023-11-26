@@ -1,4 +1,5 @@
 return {
+  -- TODO: Todo comments
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },

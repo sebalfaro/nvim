@@ -1,31 +1,31 @@
 -- Gruvbox
---return {
---  "sebalfaro/gruvbox-baby-nvim",
---  lazy = true,
---  priority = 1000,
---}
+-- return {
+--   "sebalfaro/gruvbox-baby-nvim",
+--   lazy = true,
+--   priority = 1000,
+-- }
 
 -- Blue Tokyonight
---return {
---  {
---    "folke/tokyonight.nvim",
---    lazy = false,
---    priority = 1000,
---    opts = {
---      style = "storm",
---      transparent = true,
---      styles = {
---        sidebars = "transparent",
---        floats = "transparent",
---      },
---    },
---    config = function(_, opts)
---      local tokyonight = require("tokyonight")
---      tokyonight.setup(opts)
---      tokyonight.load()
---    end,
---  },
---}
+-- return {
+--   {
+--     "folke/tokyonight.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {
+--       style = "storm",
+--       transparent = true,
+--       styles = {
+--         sidebars = "transparent",
+--         floats = "transparent",
+--       },
+--     },
+--     config = function(_, opts)
+--       local tokyonight = require("tokyonight")
+--       tokyonight.setup(opts)
+--       tokyonight.load()
+--     end,
+--   },
+-- }
 
 -- Craftdog
 --return {
@@ -41,60 +41,60 @@
 --  },
 --}
 
---return {
---  "rebelot/kanagawa.nvim",
---  lazy = true,
---  priority = 1000,
---  opts = function()
---    return {
---      compile = false, -- enable compiling the colorscheme
---      undercurl = true, -- enable undercurls
---      commentStyle = { italic = true },
---      functionStyle = {},
---      keywordStyle = { italic = true },
---      statementStyle = { bold = true },
---      typeStyle = {},
---      transparent = true, -- do not set background color
---      dimInactive = false, -- dim inactive window `:h hl-NormalNC`
---      terminalColors = true, -- define vim.g.terminal_color_{0,17}
---      colors = { -- add/modify theme and palette colors
---        palette = {},
---        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
---      },
---      overrides = function(colors) -- add/modify highlights
---        return {}
---      end,
---      theme = "wave", -- Load "wave" theme when 'background' option is not set
---      background = { -- map the value of 'background' option to a theme
---        dark = "wave", -- try "dragon" !
---        light = "lotus",
---      },
---    }
---  end,
---}
+-- return {
+--   "rebelot/kanagawa.nvim",
+--   lazy = true,
+--   priority = 1000,
+--   opts = function()
+--     return {
+--       compile = false, -- enable compiling the colorscheme
+--       undercurl = true, -- enable undercurls
+--       commentStyle = { italic = true },
+--       functionStyle = {},
+--       keywordStyle = { italic = true },
+--       statementStyle = { bold = true },
+--       typeStyle = {},
+--       transparent = true, -- do not set background color
+--       dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+--       terminalColors = true, -- define vim.g.terminal_color_{0,17}
+--       colors = { -- add/modify theme and palette colors
+--         palette = {},
+--         theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+--       },
+--       overrides = function(colors) -- add/modify highlights
+--         return {}
+--       end,
+--       theme = "wave", -- Load "wave" theme when 'background' option is not set
+--       background = { -- map the value of 'background' option to a theme
+--         dark = "wave", -- try "dragon" !
+--         light = "lotus",
+--       },
+--     }
+--   end,
+-- }
 
 -- Sainhe
---return {
---  "sainnhe/gruvbox-material",
---  name = "gruvbox-material",
---  lazy = false,
---  priority = 1000,
---  opts = function()
---    vim.g.gruvbox_material_better_performance = 1
---    -- Fonts
---    vim.g.gruvbox_material_disable_italic_comment = 1
---    vim.g.gruvbox_material_enable_italic = 0
---    vim.g.gruvbox_material_enable_bold = 0
---    vim.g.gruvbox_material_transparent_background = 1
---    -- Themes
---    vim.g.gruvbox_material_foreground = "mix"
---    vim.g.gruvbox_material_background = "hard"
---    vim.g.gruvbox_material_ui_contrast = "high" -- The contrast of line numbers, indent lines, etc.
---    vim.g.gruvbox_material_float_style = "dim" -- Background of floating windows
+-- return {
+--   "sainnhe/gruvbox-material",
+--   name = "gruvbox-material",
+--   lazy = false,
+--   priority = 1000,
+--   opts = function()
+--     vim.g.gruvbox_material_better_performance = 1
+--     -- Fonts
+--     vim.g.gruvbox_material_disable_italic_comment = 1
+--     vim.g.gruvbox_material_enable_italic = 0
+--     vim.g.gruvbox_material_enable_bold = 0
+--     vim.g.gruvbox_material_transparent_background = 1
+--     -- Themes
+--     vim.g.gruvbox_material_foreground = "mix"
+--     vim.g.gruvbox_material_background = "hard"
+--     vim.g.gruvbox_material_ui_contrast = "high" -- The contrast of line numbers, indent lines, etc.
+--     vim.g.gruvbox_material_float_style = "dim" -- Background of floating windows
 --
---    vim.cmd.colorscheme("gruvbox-material") -- For highlights customizations go to lua/core/highlights
---  end,
---}
+--     vim.cmd.colorscheme("gruvbox-material") -- For highlights customizations go to lua/core/highlights
+--   end,
+-- }
 
 -- Guy from Reddit
 return {
