@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 local opt = vim.opt
--- local global = vim.g
+local global = vim.g
 
 -- Use clipboard
 opt.clipboard = "unnamedplus"
@@ -17,3 +17,7 @@ opt.wrap = true
 opt.breakindent = true
 opt.linebreak = true
 -- opt.showbreak = string.rep(" ", 3) -- Make it so that long lines wrap smartly
+
+-- Autoformat
+global.autoformat = false
+
