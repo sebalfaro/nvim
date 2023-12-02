@@ -45,6 +45,9 @@ return {
       ensure_installed = {
         "bash",
         "html",
+        "astro",
+        "bash",
+        "css",
         "javascript",
         "json",
         "lua",
@@ -57,6 +60,10 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "gitignore",
+        "graphql",
+        "http",
+        "java"
       },
     },
   },
