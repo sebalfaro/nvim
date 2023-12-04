@@ -8,6 +8,10 @@ return {
         hide_gitignored = true,
       },
     },
+    window = {
+      position = "left",
+      width = 23,
+    },
   },
 }
 -- return {

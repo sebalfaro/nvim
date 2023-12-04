@@ -26,6 +26,7 @@ return {
         -- example to setup with typescript.nvim
         tsserver = function(_, opts)
           require("typescript").setup({ server = opts })
+          require("typescript").setup({})
           return true
         end,
         -- Specify * to use this function as a fallback for any server
@@ -57,6 +58,13 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "gitignore",
+        "graphql",
+        "http",
+        "java",
+        "astro",
+        "bash",
+        "css",
       },
     },
   },
@@ -72,6 +80,14 @@ return {
         "tsx",
         "typescript",
       })
+      require("nvim-treesitter.configs").setup({
+        autotag = {
+          enable = true,
+        },
+      })
     end,
   },
+  -- Auto import
+  { "kristijanhusak/vim-js-file-import" },
+  { "ludovicchabant/vim-gutentags" },
 }
