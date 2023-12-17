@@ -14,6 +14,7 @@ require("lazy").setup({
           "scss",
           "pug",
           "typescriptreact",
+          "typescript",
           "php",
         },
         -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
@@ -23,7 +24,7 @@ require("lazy").setup({
           excludeLanguages = {},
           --- @type string[]
           extensionsPath = {},
-          --- @type table<string, any> [Emmet Docs](https://docs.emmet.io/customization/preferences/)
+          --- @type table<string, any> [Emmet Docs](https://docs.emmet.i/customizationpreferences/)
           preferences = {},
           --- @type boolean Defaults to `true`
           showAbbreviationSuggestions = true,
@@ -43,13 +44,17 @@ require("lazy").setup({
   {
     "olrtg/nvim-emmet",
     config = function()
-      vim.keymap.set({ "n", "v" }, "<leader>xe", require("nvim-emmet").wrap_with_abbreviation, { desc = "Emmet Snippet"})
+      vim.keymap.set(
+        { "n", "v" },
+        "<leader>xe",
+        require("nvim-emmet").wrap_with_abbreviation,
+        { desc = "Emmet Snippet" }
+      )
     end,
   },
   { "folke/tokyonight.nvim" },
   { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
   { "williamboman/mason-lspconfig.nvim" },
-  { "neovim/nvim-lspconfig" },
   { "hrsh7th/nvim-cmp" },
   { "hrsh7th/cmp-nvim-lsp" },
   {
@@ -77,7 +82,7 @@ require("lazy").setup({
     config = function(plugin, opts)
       -- require("plugins.configs.luasnip")
       require("luasnip.loaders.from_vscode").lazy_load({
-        include = { "javascript", "javascriptreact", "typescriptreact" },
+        include = { "javascript", "javascriptreact", "typescriptreact", "typescript" },
       })
       -- friendly-snippets - enable standardized comments snippets
       require("luasnip").filetype_extend("typescript", { "tsdoc" })
