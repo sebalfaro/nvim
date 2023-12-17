@@ -35,3 +35,4 @@ keymap.set("n", "sl", "<C-w>l")
 
 --Resize window
 keymap.set("n", "<C-w><left>", "<C-w><")
+
