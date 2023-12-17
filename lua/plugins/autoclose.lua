@@ -1,8 +1,8 @@
-return {
-  "windwp/nvim-autopairs",
-  event = "InsertEnter",
-  opts = {}, -- this is equalent to setup({}) function
-}
+-- return {
+--   "windwp/nvim-autopairs",
+--   event = "InsertEnter",
+--   opts = {}, -- this is equalent to setup({}) function
+-- }
 
 -- Best than autopairs
 -- return {
@@ -13,3 +13,7 @@ return {
 --     --Config goes here
 --   },
 -- }
+return{
+  "echasnovski/mini.pairs",
+  version = false
+}

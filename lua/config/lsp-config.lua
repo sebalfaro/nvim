@@ -2,6 +2,7 @@ require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
     opts = function()
+      -- TODO: CHECK CLOSING TAG FOR COMPONENTS
       require("lspconfig").emmet_language_server.setup({
         filetypes = {
           "css",
@@ -43,7 +44,12 @@ require("lazy").setup({
   {
     "olrtg/nvim-emmet",
     config = function()
-      vim.keymap.set({ "n", "v" }, "<leader>xe", require("nvim-emmet").wrap_with_abbreviation, { desc = "Emmet Snippet"})
+      vim.keymap.set(
+        { "n", "v" },
+        "<leader>xe",
+        require("nvim-emmet").wrap_with_abbreviation,
+        { desc = "Emmet Snippet" }
+      )
     end,
   },
   { "folke/tokyonight.nvim" },
@@ -77,8 +83,9 @@ require("lazy").setup({
     config = function(plugin, opts)
       -- require("plugins.configs.luasnip")
       require("luasnip.loaders.from_vscode").lazy_load({
-        include = { "javascript", "javascriptreact", "typescriptreact" },
+        include = { "javascript", "javascriptreact", "typescriptreact", "typescript" },
       })
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets/typescript" } })
       -- friendly-snippets - enable standardized comments snippets
       require("luasnip").filetype_extend("typescript", { "tsdoc" })
       require("luasnip").filetype_extend("javascript", { "jsdoc" })
