@@ -14,6 +14,7 @@ return {
     --   "typescript",
     -- })
     require("nvim-treesitter.configs").setup({
+      auto_install = true,
       ensure_installed = {
         "bash",
         "html",
@@ -36,9 +37,32 @@ return {
         "astro",
         "bash",
         "css",
+        "php",
       },
       autotag = {
         enable = true,
+        enable_rename = true,
+        enable_close = true,
+        enable_close_on_slash = true,
+        filetypes = {
+          "html",
+          "javascript",
+          "typescript",
+          "javascriptreact",
+          "typescriptreact",
+          "svelte",
+          "vue",
+          "tsx",
+          "jsx",
+          "rescript",
+          "xml",
+          "php",
+          "markdown",
+          "astro",
+          "glimmer",
+          "handlebars",
+          "hbs",
+        },
       },
       indent = {
         enable = true,

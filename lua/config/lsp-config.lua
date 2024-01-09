@@ -1,6 +1,12 @@
 require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
+    config = function()
+      local lspconfig = require("lspconfig")
+      lspconfig.lua_ls.setup({})
+      lspconfig.tsserver.setup({})
+      lspconfig.intelephense.setup({})
+    end,
     opts = function()
       require("lspconfig").emmet_language_server.setup({
         filetypes = {
@@ -9,9 +15,9 @@ require("lazy").setup({
           "html",
           "javascript",
           "javascriptreact",
-          "less",
-          "sass",
-          "scss",
+          -- "less",
+          -- "sass",
+          -- "scss",
           "pug",
           "typescriptreact",
           "typescript",
@@ -38,6 +44,9 @@ require("lazy").setup({
           variables = {},
         },
       })
+      -- servers = {
+      --   intelephense = {},
+      -- }
     end,
   },
   -- Emmet - visual integration to Lz menu
@@ -54,7 +63,25 @@ require("lazy").setup({
   },
   { "folke/tokyonight.nvim" },
   { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-  { "williamboman/mason-lspconfig.nvim" },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "black",
+          "debugpy",
+          "mypy",
+          "ruff",
+          "pyright",
+          "tailwindcss-language-server",
+          "typescript-language-server",
+          "css-lsp",
+          "html-lsp",
+          "intelephense",
+        },
+      })
+    end,
+  },
   { "hrsh7th/nvim-cmp" },
   { "hrsh7th/cmp-nvim-lsp" },
   {
@@ -69,6 +96,8 @@ require("lazy").setup({
         "tailwindcss-language-server",
         "typescript-language-server",
         "css-lsp",
+        "html-lsp",
+        "intelephense",
       },
     },
   },
