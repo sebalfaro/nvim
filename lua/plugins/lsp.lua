@@ -7,8 +7,6 @@ return {
       ---@type lspconfig.options
       inlay_hints = { enabled = false },
       servers = {
-        -- TS setup commented and config added in ts.lua
-        -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
         html = {},
         eslint = {},
@@ -35,11 +33,24 @@ return {
         --     "less",
         --     "sass",
         --     "scss",
-        --     "pug",
+        --     "pug,"
         --     "typescriptreact",
         --     "typescript",
         --     "php",
         --     "markdown",
+        --   },
+        -- },
+        -- tailwindcss = {
+        --   filetypes = { "templ", "astro", "javascript", "typescript", "react", "html", "heex" },
+        -- },
+        tailwindcss = {},
+        -- sonarlint = {
+        --   filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact", "ts", "tsx" }, -- ajusta según tus lenguajes de trabajo
+        --   root_dir = require("lspconfig").util.root_pattern(".git", "sonar-project.properties"),
+        --   settings = {
+        --     sonarlint = {
+        --       lintProject = true,
+        --     },
         --   },
         -- },
       },

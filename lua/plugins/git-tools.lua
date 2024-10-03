@@ -7,7 +7,7 @@ return {
     end,
     config = function()
       --vim.g.gitblame_ignored_filetypes = { "toggleterm" }
-      --vim.g.gitblame_date_format = "%r"
+      vim.g.gitblame_date_format = "%x %r"
       vim.g.gitblame_message_template = "<author> • <date> • <summary> • <sha>"
     end,
   },
@@ -66,6 +66,32 @@ return {
     version = "*",
     config = true,
 
+    opts = function()
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "GitConflictDetected",
+        callback = function()
+          vim.notify("Conflict detected in " .. vim.fn.expand("<afile>"))
+          vim.keymap.set("n", "cww", function()
+            engage.conflict_buster()
+            create_buffer_local_mappings()
+          end, "Git Conflict")
+        end,
+      })
+
+      require("git-conflict").setup({
+        default_mappings = {
+          ours = "<leader>gCo",
+          theirs = "<leader>gCt",
+          none = "<leader>gC0",
+          both = "<leader>gCb",
+          next = "<leader>gCn",
+          prev = "<leader>gCp",
+        },
+      })
+    end,
+    -- keys = {
+    --   { "<leader>gC", desc = "Git Conflict" },
+    -- }
     -- Keybinds
     -- co — choose ours
     -- ct — choose theirs
@@ -73,5 +99,49 @@ return {
     -- c0 — choose none
     -- ]x — move to previous conflict
     -- [x — move to next conflict
+  },
+  -- Git Graph
+  -- {
+  --   "SuperBo/fugit2.nvim",
+  --   opts = {
+  --     width = 70,
+  --     libgit2_path = "/opt/homebrew/lib/libgit2.dylib",
+  --   },
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-tree/nvim-web-devicons",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-neorocks/rocks.nvim",
+  --     {
+  --       "chrisgrieser/nvim-tinygit", -- optional: for Github PR view
+  --       dependencies = { "stevearc/dressing.nvim" },
+  --     },
+  --   },
+  --   cmd = { "Fugit2", "Fugit2Diff", "Fugit2Graph" },
+  --   keys = {
+  --     { "<leader>gF", mode = "n", "<cmd>Fugit2<cr>", desc = "Git Graph" },
+  --   },
+  -- },
+
+  -- Graph
+  {
+    "isakbm/gitgraph.nvim",
+    dependencies = { "sindrets/diffview.nvim" },
+    ---@type I.GGConfig
+    opts = {
+      symbols = {
+        merge_commit = "M",
+        commit = "*",
+      },
+      format = {
+        timestamp = "%H:%M:%S %d-%m-%Y",
+        fields = { "hash", "timestamp", "author", "branch_name", "tag" },
+      },
+    },
+    init = function()
+      vim.keymap.set("n", "<leader>go", function()
+        require("gitgraph").draw({}, { all = true, max_count = 5000 })
+      end, { desc = "New Git Graph" })
+    end,
   },
 }

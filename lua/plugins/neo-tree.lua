@@ -19,6 +19,7 @@ return {
     window = {
       -- auto_expand_width = true,
       width = "20%",
+      position = "right",
     },
     source_selector = {
       winbar = true, -- toggle to show selector on winbar

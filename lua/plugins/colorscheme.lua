@@ -3,12 +3,16 @@ return {
     "folke/tokyonight.nvim",
     lazy = false,
     opts = {
+      terminal_colors = false,
       style = "night",
       priority = 1000,
       transparent = true,
       styles = {
-        sidebars = "transparent",
-        floats = "transparent",
+        -- floats = "transparent",
+        -- floats = "#8be8a2",
+        -- sidebars = "#1a1b26",
+        -- floats = "#1a1b26",
+        -- comments = { italic = true },
       },
     },
   },
@@ -140,7 +144,7 @@ return {
     -- Sainhe
     "sainnhe/gruvbox-material",
     name = "gruvbox-material",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     opts = function()
       vim.g.gruvbox_material_better_performance = 1
@@ -253,17 +257,6 @@ return {
       })
     end,
   },
-  -- {
-  --   "akinsho/horizon.nvim",
-  --   lazy = true,
-  --   opts = {
-  --     overrides = {
-  --       colors = {
-  --         bg = "#FFF",
-  --       },
-  --     },
-  --   },
-  -- },
   {
     "olimorris/onedarkpro.nvim",
     lazy = true,
@@ -369,6 +362,72 @@ return {
       -- vim.cmd("colorscheme lavender")
     end,
   },
+  -- {
+  --   "akinsho/horizon.nvim",
+  --   opts = {
+  --     overrides = {
+  --       colors = {
+  --         Normal = { bg = "None" },
+  --         ColorColumn = { bg = "None" },
+  --         SignColumn = { bg = "None" },
+  --         Folded = { bg = "None" },
+  --         FoldColumn = { bg = "None" },
+  --         CursorLine = { bg = "black" },
+  --         CursorColumn = { bg = "None" },
+  --         WhichKeyFloat = { bg = "None" },
+  --         VertSplit = { bg = "None" },
+  --         LineNrAbove = { fg = "#FFFFFF", bold = true },
+  --         LineNr = { fg = "#fcba03", bold = true },
+  --         LineNrBelow = { fg = "#FFFFFF", bold = true },
+  --       },
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "akinsho/horizon.nvim",
+  --   -- dependencies = {
+  --   --   "xiyaowong/transparent.nvim",
+  --   --   lazy = false,
+  --   -- },
+  --   transparent = true,
+  --   lazy = false,
+  --   name = "horizon",
+  --   opts = {
+  --     plugins = {
+  --       cmp = true,
+  --       indent_blankline = true,
+  --       nvim_tree = true,
+  --       telescope = true,
+  --       which_key = true,
+  --       barbar = true,
+  --       notify = true,
+  --       symbols_outline = true,
+  --       neo_tree = true,
+  --       gitsigns = true,
+  --       crates = true,
+  --       hop = true,
+  --       navic = true,
+  --       quickscope = false,
+  --     },
+  --     overrides = {
+  --       colors = {
+  --
+  --         Normal = { bg = "None" },
+  --         ColorColumn = { bg = "None" },
+  --         SignColumn = { bg = "None" },
+  --         Folded = { bg = "None" },
+  --         FoldColumn = { bg = "None" },
+  --         CursorLine = { bg = "black" },
+  --         CursorColumn = { bg = "None" },
+  --         WhichKeyFloat = { bg = "None" },
+  --         VertSplit = { bg = "None" },
+  --         LineNrAbove = { fg = "#FFFFFF", bold = true },
+  --         LineNr = { fg = "#fcba03", bold = true },
+  --         LineNrBelow = { fg = "#FFFFFF", bold = true },
+  --       },
+  --     },
+  --   },
+  -- },
   {
     -- "LunarVim/horizon.nvim",
     -- opts = {
@@ -391,23 +450,42 @@ return {
   {
     "koalhack/koalight.nvim",
     lazy = false,
+    dependencies = {
+      "xiyaowong/transparent.nvim",
+      lazy = false,
+    },
   },
   {
     "oxfist/night-owl.nvim",
     lazy = true,
     opts = {
       transparent_background = true,
-    }
+    },
+  },
+  {
+    "xero/evangelion.nvim",
+    lazy = false,
+    priority = 1000,
+    -- config = function()
+    --   vim.cmd("colorscheme evangelion")
+    -- end,
+  },
+  {
+    "eldritch-theme/eldritch.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = { transparent = false, terminal_colors = false },
   },
   -- Setting Default
   {
     "LazyVim/LazyVim",
     import = "lazyvim.plugins",
     opts = {
-      colorscheme = "dracula",
+      -- colorscheme = "dracula",
       -- colorscheme = "neofusion",
       -- colorscheme = "gruvbox-baby",
-      -- colorscheme = "tokyonight",
+      colorscheme = "tokyonight",
+      -- colorscheme = "eldritch",
       -- colorscheme = "koalight",
       -- colorscheme = "kanagawa-dragon",
       -- colorscheme = "fluoromachine",

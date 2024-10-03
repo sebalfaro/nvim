@@ -8,11 +8,11 @@ return {
       "Zeioth/NormalSnippets",
       "benfowler/telescope-luasnip.nvim",
       "saadparwaiz1/cmp_luasnip",
-      {
-        "mlaursen/vim-react-snippets",
-        dependencies = "L3MON4D3/LuaSnip",
-        ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-      },
+      -- {
+      --   "mlaursen/vim-react-snippets",
+      --   dependencies = "L3MON4D3/LuaSnip",
+      --   ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+      -- },
     },
     opts = function(plugin, opts)
       -- friendly-snippets - enable standardized comments snippets
@@ -69,29 +69,52 @@ return {
     -- opts =
     -- Removing TAB behaviors it's making conflicts when tab an empty space on yml files
     keys = {
+      {
+        "<C-Space>",
+        function()
+          return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next"
+        end,
+        expr = true,
+        silent = true,
+        mode = "i",
+      },
       -- {
-      --   "<tab>",
+      --   "<C-k>",
       --   function()
-      --     return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
+      --     require("luasnip").jump(1)
       --   end,
-      --   expr = true,
-      --   silent = true,
-      --   mode = "i",
+      --   mode = "s",
       -- },
-      {
-        "<tab>",
-        function()
-          require("luasnip").jump(1)
-        end,
-        mode = "s",
-      },
-      {
-        "<s-tab>",
-        function()
-          require("luasnip").jump(-1)
-        end,
-        mode = { "i", "s" },
-      },
+      -- {
+      --   "<C-j>",
+      --   function()
+      --     require("luasnip").select_next_item(select_opts)
+      --   end,
+      --   mode = { "i", "s" },
+      -- },
+      --   {
+      --     "<C-o>",
+      --     function()
+      --       require("cmp").mapping.abort()
+      --     end,
+      --     mode = { "i", "s" },
+      --   },
+      -- },
+
+      -- {
+      --   "<C-k>",
+      --   function()
+      --     require("luasnip").jump(1)
+      --   end,
+      --   mode = "s",
+      -- },
+      -- {
+      --   "<s-j>",
+      --   function()
+      --     require("luasnip").jump(-1)
+      --   end,
+      --   mode = { "i", "s" },
+      -- },
       {
         "<CR>",
         function()
@@ -99,6 +122,13 @@ return {
         end,
         mode = { "i", "s" },
       },
+      -- {
+      --   "<C-o>",
+      --   function()
+      --     require("luasnip").mapping.confirm({ select = true })
+      --   end,
+      --   mode = { "i", "s" },
+      -- },
     },
   },
 }

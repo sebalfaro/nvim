@@ -5,10 +5,11 @@
 -- Fix canceallevel for json files
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "json", "jsonc", "yaml", "yml", "Dockerfile", "markdown" },
-  -- pattern = {}
   callback = function()
-    vim.wo.spell = false
-    vim.wo.conceallevel = 0
+    -- vim.wo.spell = false
+    -- vim.wo.conceallevel = 0
+    vim.opt.spell = false
+    vim.opt.conceallevel = 0
   end,
 })
 

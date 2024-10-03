@@ -38,3 +38,5 @@ keymap.set("n", "<C-w><left>", "<C-w><")
 
 --Quick Quit
 -- keymap.set("n", "<leader>q", ":qa!<Return>", { desc = "Quick Quit" })
+
+keymap.set({ "n", "v" }, "<leader>gC", "Git Conflict")

@@ -1,0 +1,22 @@
+return {
+  -- "leath-dub/snipe.nvim",
+  -- config = function()
+  --   local snipe = require("snipe")
+  --   snipe.setup()
+  -- end,
+  -- keys = {
+  --   {
+  --     "gb",
+  --     function()
+  --       require("snipe").create_buffer_menu_toggler()()
+  --     end,
+  --     desc = "List buffers in Snipe window",
+  --   },
+  --   {
+  --     "gq",
+  --     function()
+  --       vim.api.nvim_buf_delete(state.buffer, { force = true })
+  --     end,
+  --   },
+  -- },
+}

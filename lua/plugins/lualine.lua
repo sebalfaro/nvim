@@ -144,7 +144,7 @@ return {
             function()
               local buf = vim.api.nvim_get_current_buf()
               local formatters = require("conform").list_formatters(buf)
-              local lsp_formatter = require("conform").will_fallback_lsp({ buf })
+              local lsp_formatter = require("conform").list_formatters_to_run({ buf })
               local selected_formatters = {}
 
               for _, formatter in ipairs(formatters) do

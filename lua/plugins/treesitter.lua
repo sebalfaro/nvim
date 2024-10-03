@@ -34,6 +34,7 @@ return {
         "css",
         "php",
         "sql",
+        "latex",
       },
       autotag = {
         enable = true,
