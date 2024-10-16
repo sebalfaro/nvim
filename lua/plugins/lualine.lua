@@ -143,22 +143,25 @@ return {
           {
             function()
               local buf = vim.api.nvim_get_current_buf()
-              local formatters = require("conform").list_formatters(buf)
-              local lsp_formatter = require("conform").list_formatters_to_run({ buf })
-              local selected_formatters = {}
+              local conform = require("conform")
 
+              -- Listar formatters disponibles y chequear si el LSP también es un formatter
+              local formatters = conform.list_formatters(buf)
+              local lsp_formatter = conform.list_formatters_to_run(buf)
+              local available_formatters = {}
+
+              -- Filtrar los formatters disponibles
               for _, formatter in ipairs(formatters) do
                 if formatter.available then
-                  table.insert(selected_formatters, formatter.name)
+                  table.insert(available_formatters, formatter.name)
                 end
               end
 
-              if #selected_formatters == 0 and lsp_formatter == false then
-                return "  N/A"
-              elseif lsp_formatter == true then
-                return "  lsp"
+              -- Determinar el estado del formatter a mostrar
+              if #available_formatters == 0 then
+                return lsp_formatter and "  lsp" or "  N/A"
               else
-                return "  " .. table.concat(selected_formatters, ", ")
+                return "  " .. table.concat(available_formatters, ", ")
               end
             end,
           },
