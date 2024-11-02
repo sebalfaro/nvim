@@ -21,7 +21,7 @@ return {
         "css-lsp",
         "html-lsp",
         "intelephense",
-        -- "emmet-language-server",
+        "emmet-language-server",
         "prettier",
         "pretty-php",
         "phpcs",

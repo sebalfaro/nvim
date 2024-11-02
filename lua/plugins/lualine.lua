@@ -20,9 +20,12 @@ return {
 
     vim.o.laststatus = vim.g.lualine_laststatus
 
+    local custom_tokyonight = require("lualine.themes.tokyonight")
+    custom_tokyonight.normal.c.bg = "#1a1b26"
+
     local opts = {
       options = {
-        theme = "auto",
+        theme = custom_tokyonight,
         globalstatus = vim.o.laststatus == 3,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
       },
