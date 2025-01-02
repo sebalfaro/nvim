@@ -447,14 +447,14 @@ return {
       })
     end,
   },
-  {
-    "koalhack/koalight.nvim",
-    lazy = false,
-    dependencies = {
-      "xiyaowong/transparent.nvim",
-      lazy = false,
-    },
-  },
+  -- {
+  --   "koalhack/koalight.nvim",
+  --   lazy = false,
+  --   dependencies = {
+  --     "xiyaowong/transparent.nvim",
+  --     lazy = false,
+  --   },
+  -- },
   {
     "oxfist/night-owl.nvim",
     lazy = true,
