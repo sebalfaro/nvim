@@ -1,4 +1,14 @@
 return {
+  {
+    "saghen/blink.cmp",
+    opts = {
+      keymap = {
+        preset = "enter",
+        ["<S-Tab>"] = { "select_prev", "fallback" },
+        ["<Tab>"] = { "select_next", "fallback" },
+      },
+    },
+  },
   -- {
   --   "L3MON4D3/LuaSnip",
   --   version = nil,

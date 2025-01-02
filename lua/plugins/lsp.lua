@@ -2,9 +2,8 @@ return {
   -- add pyright to lspconfig
   {
     "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
+    -- dependencies = { "saghen/blink.cmp" },
     opts = {
-      ---@type lspconfig.options
       inlay_hints = { enabled = false },
       servers = {
         pyright = {},
