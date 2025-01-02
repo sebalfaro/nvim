@@ -40,16 +40,32 @@ return {
       highlight_separator = "NeoTreeTabActive",
       highlight_separator_active = "NeoTreeTabActive",
     },
-  },
-  event_handlers = {
-    {
-      event = "file_opened",
-      handler = function(file_path)
-        -- auto close
-        -- vimc.cmd("Neotree close")
-        -- OR
-        require("neo-tree.command").execute({ action = "close" })
-      end,
+    event_handlers = {
+      {
+        event = "file_opened",
+        handler = function(file_path)
+          -- auto close
+          -- vimc.cmd("Neotree close")
+          -- OR
+          require("neo-tree.command").execute({ action = "close" })
+        end,
+      },
+      {
+        event = "neo_tree_window_after_open",
+        handler = function(args)
+          if args.position == "left" or args.position == "right" then
+            vim.cmd("wincmd =")
+          end
+        end,
+      },
+      {
+        event = "neo_tree_window_after_close",
+        handler = function(args)
+          if args.position == "left" or args.position == "right" then
+            vim.cmd("wincmd =")
+          end
+        end,
+      },
     },
   },
 }
