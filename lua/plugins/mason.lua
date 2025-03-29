@@ -39,7 +39,7 @@ return {
         "lemminx",
         "xmlformatter",
         "fixjson",
-        "sonarlint-language-server",
+        -- "sonarlint-language-server",
         "prettierd",
       },
     },

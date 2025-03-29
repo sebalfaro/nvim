@@ -248,7 +248,7 @@ return {
   -- Draculareturn
   {
     "Mofiqul/dracula.nvim",
-    lazy = false,
+    lazy = true,
     config = function(_, opts)
       local dracula = require("dracula")
       dracula.setup({
@@ -288,7 +288,7 @@ return {
   },
   {
     "navarasu/onedark.nvim",
-    lazy = false,
+    lazy = true,
     opts = function()
       -- Lua
       require("onedark").setup({
